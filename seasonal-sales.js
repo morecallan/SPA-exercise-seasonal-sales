@@ -78,7 +78,7 @@ function whichSeasonIsItDamnit() {
         } else if (priceHolder[i].innerHTML.indexOf("Autumn") !== -1) {
             catAutumn.push(priceHolder[i]);
         } else if (priceHolder[i].innerHTML.indexOf("Spring") !== -1) {
-            catWinter.push(priceHolder[i]);
+            catSpring.push(priceHolder[i]);
         }
     }
 
@@ -94,6 +94,7 @@ function whichSeasonIsItDamnit() {
         var price = parseFloat(winterProduct.getElementsByClassName("price")[0].innerHTML);
         var newPrice = (price * .9).toFixed(2);
         var discountArea = winterProduct.getElementsByClassName("discountedPrice")[0]
+        discountArea.parentElement.classList.add("selected");
         discountArea.innerHTML = newPrice;
     }
 
@@ -101,6 +102,7 @@ function whichSeasonIsItDamnit() {
         var price = parseFloat(autumnProduct.getElementsByClassName("price")[0].innerHTML);
         var newPrice = (price * .75).toFixed(2);
         var discountArea = autumnProduct.getElementsByClassName("discountedPrice")[0]
+        discountArea.parentElement.classList.add("selected");
         discountArea.innerHTML = newPrice;
     }
 
@@ -108,6 +110,7 @@ function whichSeasonIsItDamnit() {
         var price = parseFloat(springProduct.getElementsByClassName("price")[0].innerHTML);
         var newPrice = (price * .85).toFixed(2);
         var discountArea = springProduct.getElementsByClassName("discountedPrice")[0]
+        discountArea.parentElement.classList.add("selected");
         discountArea.innerHTML = newPrice;
     }
     
@@ -117,6 +120,7 @@ function whichSeasonIsItDamnit() {
 function clearDiscounts() {
     var discounts = document.getElementsByClassName("discountedPrice")
     for (var i = 0; i < discounts.length; i++ ) {
+        discounts[i].parentElement.classList.remove("selected");
         discounts[i].innerHTML = "";
     }
 }
