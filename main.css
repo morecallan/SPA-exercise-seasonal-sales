@@ -1,0 +1,27 @@
+#productContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.product {
+    background-color: slategray;
+    border: 3px solid black;
+    margin: 10px;
+    width: 25%;
+    padding: 10px;
+}
+
+
+.product p {
+    display: inline-block;
+}
+
+.discountedPrice {
+    color: red;
+    font-weight: bold;
+}
+
+.selected {
+    border: 3px solid purple;
+    background-color: #ccf;
+}
